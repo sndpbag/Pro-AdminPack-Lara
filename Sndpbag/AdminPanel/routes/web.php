@@ -12,6 +12,7 @@ use Sndpbag\AdminPanel\Http\Controllers\Auth\VerificationController;
 
 // Namespace for Dashboard Controllers
 use Sndpbag\AdminPanel\Http\Controllers\Dashboard\DashboardController;
+use Sndpbag\AdminPanel\Http\Controllers\Dashboard\GlobalSettingsController;
 use Sndpbag\AdminPanel\Http\Controllers\Dashboard\SettingsController;
 use Sndpbag\AdminPanel\Http\Controllers\Dashboard\UserController;
 use Sndpbag\AdminPanel\Http\Controllers\Dashboard\UserLogController;
@@ -66,7 +67,14 @@ Route::middleware('web')->group(function () {
 	
 
     Route::middleware('auth')->group(function () {
+
         // --- Dashboard Routes ---
+
+
+        // Global Settings Routes
+Route::get('/global-settings', [GlobalSettingsController::class, 'index'])->name('global-settings.index');
+Route::post('/global-settings', [GlobalSettingsController::class, 'store'])->name('global-settings.store');
+
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         // Users Routes
