@@ -67,17 +67,19 @@
                                class="text-indigo-600 hover:text-indigo-900 mr-3">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
-                            <form id="delete-form-{{ $permission->id }}" action="{{ route('dynamic-roles.permissions.destroy', $permission) }}" 
-                                  method="POST" 
-                                  class="inline"
-                                  onsubmit="return confirm('Are you sure?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="button" class="text-red-600 hover:text-red-900 delete-btn" 
-        data-form-id="delete-form-{{ $permission->id }}">
-                                    <i class="fas fa-trash"></i> Delete
-                                </button>
-                            </form>
+                        <form id="delete-form-{{ $permission->id }}" 
+      action="{{ route('dynamic-roles.permissions.destroy', $permission) }}" 
+      method="POST" 
+      class="inline">
+    @csrf
+    @method('DELETE')
+
+    <button type="button" 
+            class="text-red-600 hover:text-red-900 delete-btn" 
+            data-form-id="delete-form-{{ $permission->id }}">
+        <i class="fas fa-trash"></i> Delete
+    </button>
+</form>
                         </td>
                     </tr>
                     @endforeach
