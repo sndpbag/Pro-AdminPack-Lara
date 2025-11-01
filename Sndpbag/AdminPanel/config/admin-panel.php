@@ -35,30 +35,36 @@ return [
             'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24">...</svg>',
             'active_on' => 'user-logs.*'
         ],
-		
-		[
-        'title' => 'Roles',
-        'route' => 'dynamic-roles.roles.index', // রোল প্যাকেজের রাউট
-        'icon' => '<svg class="w-6 h-6" ...>...</svg>', // আপনার পছন্দ মতো আইকন
-        'active_on' => 'dynamic-roles.roles.*'
+        [
+            'title' => 'Global Settings',
+            'route' => 'global-settings.index',
+            'icon' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>',
+            'active_on' => 'global-settings.*'
+        ],
+
+        [
+            'title' => 'Roles',
+            'route' => 'dynamic-roles.roles.index', // রোল প্যাকেজের রাউট
+            'icon' => '<svg class="w-6 h-6" ...>...</svg>', // আপনার পছন্দ মতো আইকন
+            'active_on' => 'dynamic-roles.roles.*'
+        ],
+        [
+            'title' => 'Permissions',
+            'route' => 'dynamic-roles.permissions.index', // রোল প্যাকেজের রাউট
+            'icon' => '<svg class="w-6 h-6" ...>...</svg>', // আপনার পছন্দ মতো আইকন
+            'active_on' => 'dynamic-roles.permissions.*'
+        ],
+        [
+            'title' => 'User Roles',
+            'route' => 'dynamic-roles.users.index', // রোল প্যাকেজের রাউট
+            'icon' => '<svg class="w-6 h-6" ...>...</svg>', // আপনার পছন্দ মতো আইকন
+            'active_on' => 'dynamic-roles.users.*'
+        ],
+
     ],
-    [
-        'title' => 'Permissions',
-        'route' => 'dynamic-roles.permissions.index', // রোল প্যাকেজের রাউট
-        'icon' => '<svg class="w-6 h-6" ...>...</svg>', // আপনার পছন্দ মতো আইকন
-        'active_on' => 'dynamic-roles.permissions.*'
-    ],
-    [
-        'title' => 'User Roles',
-        'route' => 'dynamic-roles.users.index', // রোল প্যাকেজের রাউট
-        'icon' => '<svg class="w-6 h-6" ...>...</svg>', // আপনার পছন্দ মতো আইকন
-        'active_on' => 'dynamic-roles.users.*'
-    ],
-	
-],
-	
-	
-	    /*
+
+
+    /*
     |--------------------------------------------------------------------------
     | Table Names
     |--------------------------------------------------------------------------
@@ -91,7 +97,7 @@ return [
     | Middleware
     |--------------------------------------------------------------------------
     */
-    'middleware' => ['web', 'auth','role:super-admin'],
+    'middleware' => ['web', 'auth', 'role:super-admin'],
 
     /*
     |--------------------------------------------------------------------------
